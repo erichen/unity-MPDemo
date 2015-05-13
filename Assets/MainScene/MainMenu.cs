@@ -18,8 +18,11 @@ public class MainMenu : MonoBehaviour {
 		int screenHeight = Screen.height;
 		int buttonHeight =  (int)(screenHeight * 0.1f) ;
 		int buttonWidth  =  (int)(screenWidth * 0.8f) ;
+		GUI.skin.label.fontSize = (int)(buttonHeight * 0.5f); //控制Lable字體大小
+		GUI.skin.textField.fontSize = (int)(buttonHeight * 0.5f); //控制Lable字體大小
+		GUI.skin.button.fontSize = (int)(buttonHeight * 0.8f); //控制Button字體大小
 		int width = 300;
-		int height = 200;
+		int height = 300;
 		if (width < buttonWidth) 
 		{
 			width = buttonWidth;
@@ -28,14 +31,18 @@ public class MainMenu : MonoBehaviour {
 		{
 			height = buttonHeight * 5 ;
 		}
+		if (screenHeight < height) 
+		{
+			height = screenHeight;
+		}
 
-		GUILayout.BeginArea(new Rect(Screen.width/2 -  width/2 ,Screen.height/2 - height ,width ,height));
+		GUILayout.BeginArea(new Rect( screenWidth/2 - width/2 ,screenHeight/2 - height/2,width ,height-10));
 
 		GUILayout.FlexibleSpace();	
 
 		GUILayout.BeginHorizontal();
 		GUILayout.FlexibleSpace();	
-		GUILayout.Label("Unity Networking Demo");
+		GUILayout.Label("Unity Networking Demo", GUILayout.Height(buttonHeight), GUILayout.Width(buttonWidth));
 		GUILayout.FlexibleSpace();
 		GUILayout.EndHorizontal();
 		

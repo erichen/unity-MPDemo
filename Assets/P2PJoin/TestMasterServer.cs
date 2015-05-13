@@ -23,6 +23,8 @@ public class TestMasterServer : MonoBehaviour {
 		int screenHeight = Screen.height;
 		int buttonHeight =  (int)(screenHeight * 0.1f) ;
 		int buttonWidth  =  (int)(screenWidth * 0.2f) ;
+		GUI.skin.textField.fontSize = (int)(buttonHeight * 0.6f); //控制Lable字體大小
+		GUI.skin.button.fontSize = (int)(buttonHeight * 0.6f); //控制Button字體大小
 		int width = 300;
 //		int height = 200; 
 		if (width < buttonWidth) 
